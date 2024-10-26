@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+    @apply font-sans;
+    @apply bg-deep-black;
+    @apply text-white;
+  }
+
+  h2 {
+    @apply font-bold;
+    @apply text-[40px];
+    @apply leading-10;
+    @apply tracking-[-1.14px];
+    @apply md:text-7xl;
+    @apply md:tracking-[-2.05px];
+  }
+
+  input,
+  textarea {
+    @apply resize-none;
+    @apply w-full;
+    @apply outline-0;
+    @apply bg-transparent;
+  }
+
+  .prj-image:hover > div {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  .prjs {
+    grid-template-columns: repeat(auto-fit, minmax(343xpx, 1fr)) !important;
+  }
+
+  @screen xl {
+    .prjs {
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr)) !important;
+    }
+  }
+}
